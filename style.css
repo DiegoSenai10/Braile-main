@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: url('galaxy-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-top: 20px;
+  z-index: 10;
+}
+
+.sidebar img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.main-content {
+  margin-left: 80px;
+  padding: 20px;
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.highlight img {
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.highlight-text {
+  font-size: 24px;
+  color: black;
+}
+
+.section-title {
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.book-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-item img {
+  width: 130px;
+  height: 200px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+
+.book-item img:hover {
+  transform: scale(1.05);
+}
+
+.arrow {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .highlight {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .highlight img {
+    width: 200px;
+  }
+
+  .carousel img {
+    width: 110px;
+    height: 170px;
+  }
+
+  .arrow {
+    font-size: 18px;
+    padding: 8px;
+  }
+}
